@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 显示文本的 TextView -->
+    <TextView
+        android:id="@+id/widget_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="默认文本"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 显示进度的 ProgressBar -->
+    <ProgressBar
+        android:id="@+id/widget_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="50"
+        android:layout_marginBottom="8dp"
+        style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+
+
+</LinearLayout>
