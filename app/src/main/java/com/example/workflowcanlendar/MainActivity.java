@@ -4,14 +4,11 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.workflowcanlendar.layout.taskPreviewWidget;
+import com.example.workflowcanlendar.Layout.TaskPreviewWidget;
 
 public class MainActivity extends AppCompatActivity {
-    private taskPreviewWidget  taskPreview;
+    private TaskPreviewWidget taskPreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

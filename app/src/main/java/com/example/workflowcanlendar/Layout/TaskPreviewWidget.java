@@ -1,4 +1,4 @@
-package com.example.workflowcanlendar.layout;
+package com.example.workflowcanlendar.Layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,23 +7,22 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.app.AlertDialog;
 
 import androidx.annotation.Nullable;
 
 import com.example.workflowcanlendar.R;
 
-public class taskPreviewWidget extends LinearLayout {
+public class TaskPreviewWidget extends LinearLayout {
     private TextView widgetText;
     private ProgressBar widgetProgress;
-    public taskPreviewWidget(Context context) {
+    public TaskPreviewWidget(Context context) {
         super(context);
         init(context);
 
     }
 
-    public taskPreviewWidget(Context context, @Nullable AttributeSet attrs) {
+    public TaskPreviewWidget(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }

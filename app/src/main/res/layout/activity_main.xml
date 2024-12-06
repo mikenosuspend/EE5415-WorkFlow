@@ -26,21 +26,21 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeLayout"
         app:layout_constraintBottom_toTopOf="@id/addTaskButtonCardView"
         >
-        <com.example.workflowcanlendar.layout.taskPreviewWidget
+        <com.example.workflowcanlendar.Layout.TaskPreviewWidget
             android:id="@+id/taskPreviewWidget_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <com.example.workflowcanlendar.layout.taskPreviewWidget
+        <com.example.workflowcanlendar.Layout.TaskPreviewWidget
             android:id="@+id/taskPreviewWidget_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/taskPreviewWidget_1"/>
-        <com.example.workflowcanlendar.layout.taskPreviewWidget
+        <com.example.workflowcanlendar.Layout.TaskPreviewWidget
             android:id="@+id/taskPreviewWidget_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/taskPreviewWidget_2"/>
-        <com.example.workflowcanlendar.layout.taskPreviewWidget
+        <com.example.workflowcanlendar.Layout.TaskPreviewWidget
             android:id="@+id/taskPreviewWidget_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
