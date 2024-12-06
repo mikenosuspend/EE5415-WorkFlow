@@ -1,11 +1,18 @@
 package com.example.workflowcanlendar;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.workflowcanlendar.CatagoryEnum.CatagoryEnum;
+import com.example.workflowcanlendar.Entity.TaskModel;
 import com.example.workflowcanlendar.Layout.TaskPreviewWidget;
 import com.example.workflowcanlendar.Repository.AppRepository;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -38,5 +45,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addTask() {
+        String[] categories = {
+                CatagoryEnum.HOME.getCatagoryName(),
+                CatagoryEnum.WORK.getCatagoryName(),
+                CatagoryEnum.SCHOOL.getCatagoryName(),
+                CatagoryEnum.FRIENDS.getCatagoryName()
+        };
+        View dialogView = getLayoutInflater().inflate(R.layout.add_task_dialog, null);
+        Spinner categorySpinner = dialogView.findViewById(R.id.categorySpinner);
+        EditText nameEditText = dialogView.findViewById(R.id.nameEditText);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapter);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("选择类别和输入名称")
+                .setView(dialogView)
+                .setPositiveButton("确认", (dialog, which) -> {
+                    // 获取选择的类别和输入的名称
+                    String selectedCategory = categorySpinner.getSelectedItem().toString();
+                    String name = nameEditText.getText().toString();
+
+                    dbRepository.InsertTask(new TaskModel(CatagoryEnum.valueOf(selectedCategory).getCatagoryCode(), name));
+
+                })
+                .setNegativeButton("取消", (dialog, which) -> dialog.dismiss())
+                .create()
+                .show();
     }
 }

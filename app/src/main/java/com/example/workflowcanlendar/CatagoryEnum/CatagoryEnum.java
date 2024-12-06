@@ -1,10 +1,10 @@
 package com.example.workflowcanlendar.CatagoryEnum;
 
 public enum CatagoryEnum {
-    HOME("Home" , 0 ),
-    WORK("Work" , 1),
-    SCHOOL("School" , 2),
-    FRIENDS("Friends" , 3);
+    HOME("HOME" , 0 ),
+    WORK("WORK" , 1),
+    SCHOOL("SCHOOL" , 2),
+    FRIENDS("FRIENDS" , 3);
 
     private final String catagoryName;
     private final int catagoryCode;
