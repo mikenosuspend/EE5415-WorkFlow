@@ -19,4 +19,10 @@ public interface TaskModelDao {
 
     @Query("DELETE FROM task_records")
     void clearAllTasks();
+
+    @Query("SELECT COUNT(*) FROM task_records WHERE catagory = :catagory")
+    LiveData<Integer> getTaskCountByCatagory(int catagory);
+
+    @Query("SELECT COUNT(*) FROM task_records")
+    LiveData<Integer> getAllTaskCount();
 }
